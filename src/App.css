@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.App-article{
+  position: relative;
+  top: 20%;
+}
+
+.App-article .msg{
+  margin:10px;
+  font-size:30px;
+}
