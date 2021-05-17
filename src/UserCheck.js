@@ -22,7 +22,7 @@ class UserCheck extends Component{
                             
                             alert('hi');
 
-                        }}>시작하기</Button>
+                        }}>인식하기</Button>
 
                 </div>                                                                                                                                                      
             </div>

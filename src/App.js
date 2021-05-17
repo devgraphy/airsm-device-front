@@ -1,28 +1,28 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-
-import Topbar from './components/Topbar';
-import NestedGrid from './components/GridButton';
-import ComposedTextField from './components/TextField';
-import './App.css'
-
+import {Route} from 'react-router-dom';
+import Home from './Home';
+import UserCheck from './UserCheck';
+import CupCheck from './CupCheck';
+import OpenHole from './OpenHole';
 
 class App extends Component{
     render(){
-        
+        /*var phone = '';
+        const add = function(input){
+            phone.
+        }*/
         return(
-            <div className='App'>
-                <Topbar/>
-                <div className="App-article">
-                    <div className="msg"> 휴대폰 번호를 입력해주세요. </div>
-                    
-                    <NestedGrid/>
-                    <ComposedTextField/>
-                    <Button variant="outlined" color="primary">확인</Button>
-                </div>
+            <div>
+             <Route path="/" component={Home} exact={true}/>
+             <Route path="/guide" component={UserCheck}/>
+             <Route path="/check" component={CupCheck}/>
+             {/*<Route path="/open" component={OpenHole}/>*/}
+
+s
             </div>
             
         );
-    }
+    }      
 }
+
 export default App;

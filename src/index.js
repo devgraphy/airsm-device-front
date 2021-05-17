@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './Home';
 import reportWebVitals from './reportWebVitals';
 import UserCheck from './UserCheck';
+import {BrowserRouter} from 'react-router-dom';
 ReactDOM.render(
-  <React.StrictMode>
-    {/*<App />*/}
-    <UserCheck />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App />
+    
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

@@ -1,13 +1,13 @@
-.App {
+.Home {
   text-align: center;
 }
 
-.App-article{
+.Home-article{
   position: relative;
   top: 20%;
 }
 
-.App-article .msg{
+.Home-article .msg{
   margin:10px;
   font-size:30px;
 }

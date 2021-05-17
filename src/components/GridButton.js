@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
+import FormRow from './FormRow';
+import FormRowZero from './FormRowZero';
 // 모든 버튼 가운데 정렬 필요
 
 const useStyles = makeStyles((theme) => ({
@@ -24,52 +25,26 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function NestedGrid() {
+
+export default function NestedGrid(props){
+  var v = props.setPhone;
   const classes = useStyles();
-
-  function FormRow(props) {
-    return (
-      <React.Fragment>
-        <Button item xs={4} variant="outlined" color="secondary" className={classes.btn}>
-            {props.data[0]}
-        </Button>
-        <Button item xs={4} variant="outlined" color="secondary" className={classes.btn}>
-            {props.data[1]}
-        </Button>
-        <Button item xs={4} variant="outlined" color="secondary" className={classes.btn}>
-            {props.data[2]}
-        </Button>
-      </React.Fragment>
-    );
-  }
-
-  function FormRowZero(props) {
-    return (
-      <React.Fragment>
-        <Button item xs={4} variant="outlined" color="secondary" className={classes.btn}>
-            0
-        </Button>
-      </React.Fragment>
-    );
-  }
   return (
     <div className={classes.root}>
-      <Grid container spacing={1}>
+       <Grid container spacing={1}>
         <Grid container item xs={12} spacing={3} className={classes.btngroup} justify="center">
-          <FormRow data={[1, 2, 3]}/>
+          <FormRow data={[1, 2, 3]} phone={props.phone} setPhone={props.setPhone}/>
         </Grid>
         <Grid container item xs={12} spacing={3}className={classes.btngroup} justify="center">
-          <FormRow data={[4, 5, 6]}/>
+          <FormRow data={[4, 5, 6]} phone={props.phone} setPhone={props.setPhone}/>
         </Grid>
-        <Grid container item xs={12} spacing={3}className={classes.btngroup} justify="center">
-          <FormRow data={[7, 8, 9]}/>
+        <Grid container item xs={12} spacing={3} className={classes.btngroup} justify="center">
+          <FormRow data={[7, 8, 9]} phone={props.phone} setPhone={props.setPhone}/>
         </Grid>
-        <Grid container item xs={12} spacing={3}className={classes.btngroup} justify="center">
-          <FormRowZero/>
+        <Grid container item xs={12} spacing={3} className={classes.btngroup} justify="center">
+          <FormRowZero phone={props.phone} setPhone={props.setPhone}/>
         </Grid>
       </Grid>
     </div>
   );
 }
-
-

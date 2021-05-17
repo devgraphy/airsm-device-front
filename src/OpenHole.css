@@ -1,0 +1,14 @@
+.OpenHole {
+    text-align: center;
+  }
+  
+  .OpenHole-article{
+    position: relative;
+    top: 20%;
+  }
+  
+  .Openhole-article .msg{
+    margin:10px;
+    font-size:30px;
+  }
+  
