@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './Home';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import UserCheck from './UserCheck';
-import {BrowserRouter} from 'react-router-dom';
+const myelement = (
+  <div>
+    <App/>
+  </div>
+);
+
+
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-    
-  </BrowserRouter>,
+  myelement,
   document.getElementById('root')
 );
 

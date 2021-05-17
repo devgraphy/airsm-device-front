@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Topbar from './components/Topbar';
 import './UserCheck.css';
 import logo from './images/logo192.png';
 import Button from '@material-ui/core/Button';
-class UserCheck extends Component{
-    render(){
-        return(
+
+function Guide(props) {
+    return (
+        <div>
             <div className='UserCheck'>
                 <Topbar/>
                 <div className="UserCheck-article">
@@ -26,8 +27,8 @@ class UserCheck extends Component{
 
                 </div>                                                                                                                                                      
             </div>
-        );
-    }
+        </div>
+    );
 }
 
-export default UserCheck;
+export default Guide;

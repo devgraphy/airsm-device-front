@@ -1,28 +1,23 @@
-import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
+import React from 'react';
+import {Route, BrowserRouter} from 'react-router-dom';
 import Home from './Home';
-import UserCheck from './UserCheck';
+import Guide from './Guide';
 import CupCheck from './CupCheck';
 import OpenHole from './OpenHole';
 
-class App extends Component{
-    render(){
-        /*var phone = '';
-        const add = function(input){
-            phone.
-        }*/
-        return(
-            <div>
-             <Route path="/" component={Home} exact={true}/>
-             <Route path="/guide" component={UserCheck}/>
-             <Route path="/check" component={CupCheck}/>
-             {/*<Route path="/open" component={OpenHole}/>*/}
 
-s
-            </div>
-            
-        );
-    }      
+
+
+function App(props) {
+    return (
+        <BrowserRouter>
+            <Route path="/" component={Home} exact/>
+            <Route path="/guide" component={Guide}/>
+            <Route path="/check" component={CupCheck}/>
+        </BrowserRouter>
+
+    );
 }
 
 export default App;
+

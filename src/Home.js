@@ -7,7 +7,7 @@ import ComposedTextField from './components/TextField';
 import './Home.css'
 
 
-export default function Home(props) {
+export default function Home({history}) {
     const [phone, setPhone] = useState("");
     return(
         <div className='Home'>
@@ -17,8 +17,7 @@ export default function Home(props) {
                 
                 <NestedGrid phone={phone} setPhone={setPhone}/>
                 <ComposedTextField phone={phone}/>
-                
-                <Button variant="outlined" color="primary" phone={phone}>확인</Button>            
+                <Button variant="outlined" color="primary" phone={phone} onClick={()=>{history.push("/guide")}}>확인</Button>            
             </div>
         </div>
         
