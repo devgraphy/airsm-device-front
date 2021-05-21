@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function NestedGrid(props){
-  var v = props.setPhone;
   const classes = useStyles();
   return (
     <div className={classes.root}>
