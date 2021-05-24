@@ -1,23 +1,27 @@
 import React, {Component} from 'react';
+import './OpenHole.css';
 
 
 import Topbar from './components/Topbar';
 
 import './Home.css'
 
-
-class OpenHole extends Component{
-    render(){
-
-        return(
+function OpenHole(props) {
+    return (
+        <div>
             <div className='OpenHole'>
                 <Topbar/>
                 <div className="OpenHole-article">
-                    <div className="msg"> OO 배출구에 플라스틱 컵을 넣어주세요. </div>
+                    <div align="center" className="msg"> {props.location.mat} 배출구에 플라스틱 컵을 넣어주세요. </div>
+
                 </div>
             </div>
-            
-        );
-    }
+        </div>
+    );
 }
+
 export default OpenHole;
+
+// location 의 props로 넘어온 키의 값은 DataView 객체가 넘어옴
+
+

@@ -6,15 +6,17 @@ import Button from '@material-ui/core/Button';
 
 const mqtt = require('mqtt');
 const client = mqtt.connect('mqtt://13.208.94.244:9001');
-console.log(client);
-function Guide(props) {
-    // client.on("connect",()=>{
-    //     console.log("connected"+client.connected);
-    // });
-    
-    // function publish(message){
-    //     client.publish("webdata/camera","hey")
-    // }
+client.subscribe("abc");
+
+function Guide({history}) {
+    client.on("message", function (topic, payload) {    // mqtt 메시지는 object 타입
+        alert([topic, payload].join(": "));
+        history.push({
+            pathname:'/outlet',
+            mat:payload.toString()
+        });    // 페이지 이동과 함께 props를 전달한다.
+        client.end()
+      });
     return (
         <div>
             <div className='Guide'>

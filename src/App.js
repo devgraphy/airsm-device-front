@@ -14,7 +14,7 @@ function App(props) {
         <BrowserRouter>
             <Route path="/" component={Home} exact/>
             <Route path="/guide" component={Guide}/>
-            <Route path="/check" component={CupCheck}/>
+            <Route path="/outlet" component={OpenHole}/>
         </BrowserRouter>
        
         
