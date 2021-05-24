@@ -3,14 +3,10 @@ import Topbar from './components/Topbar';
 import './Guide.css';
 import logo from './images/logo192.png';
 import Button from '@material-ui/core/Button';
-import mqtt from 'mqtt';
 
-const options = {
-    protocol:'mqtts',
-}
-
-const client = mqtt.connect('mqtt://13.208.94.244:1883',options);
-console.log(client)
+const mqtt = require('mqtt');
+const client = mqtt.connect('mqtt://13.208.94.244:9001');
+console.log(client);
 function Guide(props) {
     // client.on("connect",()=>{
     //     console.log("connected"+client.connected);
@@ -34,7 +30,7 @@ function Guide(props) {
                     <Button 
                         variant="outlined"
                         color="primary"
-                        >인식하기</Button>
+                        onClick={()=>{client.publish("abc","hellosub");}}>인식하기</Button>
 
                 </div>                                                                                                                                                      
             </div>
