@@ -36,3 +36,5 @@ React-Route
 
 function component에서의 statehook을 이용한 상태 변경
 
+## 사용법
+`yarn` 명령어를 통해 패키지 설치
