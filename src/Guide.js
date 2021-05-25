@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 
 const mqtt = require('mqtt');
 const client = mqtt.connect('mqtt://13.208.94.244:9001');
-client.subscribe("abc");
+client.subscribe("rasp/material");
 
 function Guide({history}) {
     client.on("message", function (topic, payload) {    // mqtt 메시지는 object 타입
@@ -32,7 +32,7 @@ function Guide({history}) {
                     <Button 
                         variant="outlined"
                         color="primary"
-                        onClick={()=>{client.publish("abc","hellosub");}}>인식하기</Button>
+                        onClick={()=>{client.publish("web/camera","shot");}}>인식하기</Button>
 
                 </div>                                                                                                                                                      
             </div>
