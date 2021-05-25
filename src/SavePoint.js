@@ -1,23 +1,22 @@
 import React from 'react';
-import './OpenHole.css';
+import './SavePoint.css';
 import Topbar from './components/Topbar';
 import './Home.css'
 const mqtt = require('mqtt');
 const client = mqtt.connect('mqtt://13.208.94.244:9001');
-client.subscribe("rasp/material");
+client.subscribe("rasp/count");
 
-function OpenHole(props, {history}) {
+function OpenHole(props) {
     client.on("message", function (topic, payload) {    // mqtt 메시지는 object 타입
         alert([topic, payload].join(": "));
-        history.push('/point');  
         client.end()
       });
     return (
         <div>
-            <div className='OpenHole'>
+            <div className='SavePoint'>
                 <Topbar/>
-                <div className="OpenHole-article">
-                    <div align="center" className="msg"> {props.location.mat} 배출구에 플라스틱 컵을 넣어주세요. </div>
+                <div className="SavePoint-article">
+                    <div align="center" className="msg"> 포인트가 적립되었습니다. </div>
 
                 </div>
             </div>
