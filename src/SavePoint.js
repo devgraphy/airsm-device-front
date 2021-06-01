@@ -1,31 +1,46 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './SavePoint.css';
 import Topbar from './components/Topbar';
-import './Home.css'
-const mqtt = require('mqtt');
-const client = mqtt.connect('mqtt://13.208.94.244:9001');
-client.subscribe("rasp/count");
+import Button from '@material-ui/core/Button';
+import turtle3 from './images/turtle3.jpg';
 
-function OpenHole(props) {
-    client.on("message", function (topic, payload) {    // mqtt 메시지는 object 타입
-        alert([topic, payload].join(": "));
-        client.end()
-      });
+function SavePoint(props) {
+    // useEffect(()=>{
+    //     setTimeout(()=>props.history.push('/'),5000)
+    //     // 버튼으로 타이머가 종료하기 전에 페이지가 바뀌었음에도 타이머가 작동한다.
+    // });
+    function goHome(e){
+        e.preventDefault();
+        props.history.push('/home')
+    }
+    
     return (
         <div>
             <div className='SavePoint'>
                 <Topbar/>
                 <div className="SavePoint-article">
-                    <div align="center" className="msg"> 포인트가 적립되었습니다. </div>
-
-                </div>
+                    <div align="center" className="msg"> {props.points} 포인트가 적립되었습니다. 잠시 후 메인 화면으로 돌아갑니다. </div>
+                    
+                    <Button 
+                        className="SavePoint-btn1"
+                        variant="outlined"
+                        color="primary"
+                        onClick={()=>props.history.push('/guide')}>동일한 번호로 다시 시작하기</Button>
+                    <Button 
+                        className="SavePoint-btn2"
+                        variant="outlined"
+                        color="primary"
+                        onClick={(e)=>goHome(e)}>번호 입력화면으로 이동하기</Button>
+                    <div>
+                        <img className="img" src={turtle3} alt="hi"></img>
+                    </div>
+                </div>  
             </div>
         </div>
     );
 }
 
-export default OpenHole;
+export default SavePoint;
 
-// location 의 props로 넘어온 키의 값은 DataView 객체가 넘어옴
 
 

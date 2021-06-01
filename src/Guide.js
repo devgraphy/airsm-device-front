@@ -10,7 +10,7 @@ client.subscribe("rasp/material");
 
 function Guide({history}) {
     client.on("message", function (topic, payload) {    // mqtt 메시지는 object 타입
-        alert([topic, payload].join(": "));
+        // alert([topic, payload].join(": "));
         history.push({
             pathname:'/outlet',
             mat:payload.toString()
@@ -33,7 +33,6 @@ function Guide({history}) {
                         variant="outlined"
                         color="primary"
                         onClick={()=>{client.publish("web/camera","shot");}}>인식하기</Button>
-
                 </div>                                                                                                                                                      
             </div>
         </div>
