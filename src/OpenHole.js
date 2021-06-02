@@ -16,7 +16,7 @@ function OpenHole(props) {
             console.log("rasp/count: "+ payload + typeof(payload))
             if(payload.toString() === "over"){ // 배출구 닫음. payload는 object 타입
                 console.log("over");
-                axios.post('http://localhost:8000/membership/point/',{
+                axios.post('http://13.208.94.244:8000/membership/point/',{
                     phone
                 })
                 .then(res=>{
