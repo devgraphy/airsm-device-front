@@ -1,7 +1,10 @@
 import React from 'react';
 import Topbar from './components/Topbar';
 import './Guide.css';
-import logo from './images/logo192.png';
+import guide1 from './images/guide1.png';
+import guide2 from './images/guide2.png';
+import guide3 from './images/guide3.png';
+
 import Button from '@material-ui/core/Button';
 
 const mqtt = require('mqtt');
@@ -27,9 +30,13 @@ function Guide({history}) {
                     <p>내용물을 세척해주세요.</p>
                     <p>컵을 아래 투입구에 넣은 후 '시작하기' 버튼을 눌러주세요. </p>
                     <div>
-                        <img src={logo} alt="hi"></img>
+                        <img className="img" src={guide1} alt="hi"></img>
+                        <img className="img" src={guide2} alt="hi"></img>
+                        <img className="img" src={guide3} alt="hi"></img>
+
                     </div>
                     <Button 
+                        className="btn"
                         variant="outlined"
                         color="primary"
                         onClick={()=>{client.publish("web/camera","shot");}}>인식하기</Button>
