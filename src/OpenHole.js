@@ -15,8 +15,13 @@ function OpenHole(props) {
         if (topic === "rasp/count"){
             // console.log("rasp/count: "+ payload + typeof(payload))
             if(payload.toString() === "over"){ // 배출구 닫음. payload는 object 타입
+<<<<<<< HEAD
                 // console.log("over");
                 axios.post('http://3.37.7.183:8000/membership/point/',{
+=======
+                console.log("over");
+                axios.post('http://13.208.94.244:8000/membership/point/',{
+>>>>>>> 7a28f3604f6b01f89913f30ce9bb52f272bb4443
                     phone
                 })
                 .then(res=>{
