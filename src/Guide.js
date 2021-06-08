@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const mqtt = require('mqtt');
-const client = mqtt.connect('mqtt://13.208.94.244:9001');
+const client = mqtt.connect('mqtt://3.37.7.183:9001');
 client.subscribe("rasp/material");
 
 function Guide({history}) {
