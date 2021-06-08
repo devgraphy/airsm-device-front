@@ -8,6 +8,13 @@ import './Home.css'
 
 
 export default function Home(props) {
+    function goNext(e){
+        e.preventDefault();
+        if(props.phone.length >= 8)
+            props.history.push("/guide");
+        else
+            alert("8자 이상 입력해주세요.");
+    }
     return(
         <div className='Home'>
             <Topbar/>
@@ -16,7 +23,7 @@ export default function Home(props) {
                 
                 <NestedGrid phone={props.phone} setPhone={props.setPhone}/>
                 <ComposedTextField phone={props.phone}/>
-                <Button variant="outlined" color="primary" phone={props.phone} onClick={()=>{props.history.push("/guide")}}>확인</Button>            
+                <Button variant="outlined" color="primary" phone={props.phone} onClick={(e)=>goNext(e)}>확인</Button>            
             </div>
         </div>
         

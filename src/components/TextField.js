@@ -18,7 +18,7 @@ export default function ComposedTextField(props) {
     <form className={classes.root} noValidate autoComplete="off">
       <FormControl variant="filled">
         <InputLabel htmlFor="component-filled">Phone Number</InputLabel>
-        <FilledInput id="component-filled" value={props.phone} />
+        <FilledInput id="component-filled" value={props.phone} minlength="8" placeholder="8자 이상 입력"/>
       </FormControl>
     </form>
   );
