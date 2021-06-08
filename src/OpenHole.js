@@ -13,10 +13,10 @@ function OpenHole(props) {
     client.on("message", function (topic, payload) {    // mqtt 메시지는 object 타입
         // alert([topic, payload].join(": ")); 
         if (topic === "rasp/count"){
-            console.log("rasp/count: "+ payload + typeof(payload))
+            // console.log("rasp/count: "+ payload + typeof(payload))
             if(payload.toString() === "over"){ // 배출구 닫음. payload는 object 타입
-                console.log("over");
-                axios.post('http://localhost:8000/membership/point/',{
+                // console.log("over");
+                axios.post('http://3.37.7.183:8000/membership/point/',{
                     phone
                 })
                 .then(res=>{
@@ -28,7 +28,7 @@ function OpenHole(props) {
                 }   
             )};  
         } 
-        client.end()
+        
       });
     return (
         <div>
