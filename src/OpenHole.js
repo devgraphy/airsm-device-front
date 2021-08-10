@@ -4,7 +4,7 @@ import Topbar from './components/Topbar';
 import axios from 'axios';
 
 const mqtt = require('mqtt');
-const client = mqtt.connect('mqtt://3.37.7.183:9001');
+const client = mqtt.connect('mqtt://13.209.9.218:9001');
 client.subscribe("rasp/count");
 
 
@@ -15,7 +15,7 @@ function OpenHole(props) {
         if (topic === "rasp/count"){
             // console.log("rasp/count: "+ payload + typeof(payload))
             if(payload.toString() === "over"){ // 배출구 닫음. payload는 object 타입
-                // console.log("over");
+                console.log("over");
                 axios.post('http://localhost:8000/membership/point/',{
                     phone
                 })
@@ -25,6 +25,7 @@ function OpenHole(props) {
                         props.setPoints(res.data);
                         props.history.push('/point');
                     }
+                    // 실패면 다음 화면으로 넘어가지 않는다.
                 }   
             )};  
         } 

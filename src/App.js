@@ -44,6 +44,9 @@ function App(props) {
                 render={routeProps=>
                 <SavePoint
                     points={points}
+                    setPhone={setPhone}
+                    setPoints={setPoints}
+
                     phone={phone}
                     {...routeProps}
                 />}/>

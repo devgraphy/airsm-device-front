@@ -11,6 +11,8 @@ function SavePoint(props) {
     // });
     function goHome(e){
         e.preventDefault();
+        props.setPhone("");
+        props.setPoints("");
         props.history.push('/home')
     }
     
