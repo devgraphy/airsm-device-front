@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const mqtt = require('mqtt');
-const client = mqtt.connect('mqtt://3.37.7.183:9001');
+const client = mqtt.connect('mqtt://13.209.9.218:9001');
 client.subscribe("rasp/material");
 
 function Guide({history}) {
@@ -21,11 +21,12 @@ function Guide({history}) {
     }
     client.on("message", function (topic, payload) {    // mqtt 메시지는 object 타입
         // alert([topic, payload].join(": "));
+        console.log("mqtt received");
         history.push({
             pathname:'/outlet',
             mat:payload.toString()
         });    // 페이지 이동과 함께 props를 전달한다.
-        client.end()
+        // client.end() // 한번만 처리하고 끝낸다.
       });
     return (
         <div>
